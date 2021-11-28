@@ -1,0 +1,84 @@
+﻿@model SignUpDemo.Models.UserDetails
+
+@{
+    ViewBag.Title = "Index";
+}
+<form action="/" class="needs-validation" novalidate method="post" id="sign-up-form">
+    @Html.AntiForgeryToken()
+    <div class="container py-5">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-10 mb-4">
+                <div class="bg-white rounded p-5 shadow">
+                    <h2 class="h3 font-weight-bold text-center mb-4">User Sign Up</h2>
+                    <div class="form-group row mt-4 d-flex align-items-center justify-content-center">
+                        <div class="col-6 border-right text-center">
+                            <label class="h4 font-weight-bold mb-0" for="Email">Email Address</label>
+                        </div>
+                        <div class="col-6">
+                            <div class="h6 font-weight-bold mb-0">
+                                <input class="form-control" id="Email" name="Email" placeholder="Enter email" type="email" required>
+                                <div class="invalid-feedback">
+                                    <div id="GenEmailErr">
+                                        Please enter an email.
+                                    </div>
+                                    <div id="InvEmail">
+                                        The entered email address is not valid.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-4 d-flex align-items-center justify-content-center">
+                        <div class="col-6 border-right text-center">
+                            <label class="h4 font-weight-bold mb-0" for="Password">Password</label>
+                        </div>
+                        <div class="col-6">
+                            <div class="h6 font-weight-bold mb-0">
+                                <input type="password" class="form-control" id="Password" name="Password" placeholder="Password" required>
+                                <div class="invalid-feedback">
+                                    <div id="GenPassErr">
+                                        Please enter a password.
+                                    </div>
+                                    <div id="InvPass">
+                                        Password must contain the following:
+                                        <ul>
+                                            <li>at least one number</li>
+                                            <li>at least one uppercase letter</li>
+                                            <li>at least one lowercase letter</li>
+                                            <li>at least 8 or more characters</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text-center mt-4 d-flex align-items-center justify-content-center">
+                        <div class="col-6 border-right">
+                            <div class="h4 font-weight-bold mb-0"><button type="submit" class="btn btn-primary">Sign Up</button></div>
+                        </div>
+                        <div class="col-6">
+                            <div class="h4 font-weight-bold mb-0"><button id="reset" type="reset" class="btn btn-danger">Clear</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div aria-live="polite" aria-atomic="true" style="position: absolute; min-height: 200px; top: 10px; left: 10px;">
+    <div class="toast bg-success text-white success" data-autohide="true">
+        <div class="toast-header">
+            <strong class="mr-auto">Success</strong>
+        </div>
+        <div class="toast-body">
+        </div>
+    </div>
+
+    <div class="toast bg-danger text-white error" data-autohide="true">
+        <div class="toast-header">
+            <strong class="mr-auto">Error</strong>
+        </div>
+        <div class="toast-body">
+        </div>
+    </div>
+</div>

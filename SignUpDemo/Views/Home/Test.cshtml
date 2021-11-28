@@ -1,0 +1,27 @@
+﻿@model SignUpDemo.Models.UserDetails
+
+<div class="container py-5 rounded col-12">
+    <div class="row d-flex align-items-center justify-content-center bg-white rounded shadow p-5">
+        <h2 class="h3 font-weight-bold text-center mb-4">Database Results</h2>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(m => m.UserID)</th>
+                    <th>@Html.DisplayNameFor(m => m.Email)</th>
+                    <th>@Html.DisplayNameFor(m => m.Password)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var emp in ViewBag.UserList)
+                {
+                    <tr>
+                        <td>@emp.UserID</td>
+                        <td>@emp.Email</td>
+                        <td>@emp.Password</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
