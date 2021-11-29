@@ -111,7 +111,7 @@ namespace SignUpDemo.Controllers
                 {
                     con.Open();
 
-                    string sql = "INSERT INTO [dbo].[UserDetails](Email,Password) VALUES(@email,@password)";
+                    string sql = "INSERT INTO [UserDetails] (Email,Password) VALUES(@email,@password)";
                     using (SqlCommand cmd = new SqlCommand(sql, con))
                     {
                         cmd.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = email;
@@ -138,11 +138,11 @@ namespace SignUpDemo.Controllers
                     SqlCommand cmd;
                     if(email == null)
                     {
-                        cmd = new SqlCommand("SELECT * FROM [dbo].[UserDetails]", con);
+                        cmd = new SqlCommand("SELECT * FROM [UserDetails]", con);
                     }
                     else
                     {
-                        cmd = new SqlCommand("SELECT * FROM [dbo].[UserDetails] WHERE Email = @email", con);
+                        cmd = new SqlCommand("SELECT * FROM [UserDetails] WHERE Email = @email", con);
                         cmd.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = email;
                     }
                     cmd.CommandType = CommandType.Text;
