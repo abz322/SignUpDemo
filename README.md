@@ -20,6 +20,8 @@ If you don't have a local server visible in your VS, you will need to set one up
 
   From there you can create the "UserDB" database
 
+Sometimes there is a "roslyn" compiler error when downloading from github for the first time, I believe this is a bug with the framework compiler. Cleaning and Rebuilding the solution should fix the issue.
+
 # Misc
 If you would like to see the results of the database on screen a view has been created for ease of access. You can access this with the steps below
 - Go to SignUpDemo > Views > Shared > _Layout.cshtml
