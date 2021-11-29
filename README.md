@@ -19,3 +19,8 @@ If you don't have a local server visible in your VS, you will need to set one up
 - Database = "default"
 
   From there you can create the "UserDB" database
+
+# Misc
+If you would like to see the results of the database on screen a view has been created for ease of access. You can access this with the steps below
+- Go to SignUpDemo > Views > Shared > _Layout.cshtml
+- Uncomment the following line: @Html.Action("Test", "Home")
