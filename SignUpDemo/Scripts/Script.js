@@ -56,7 +56,7 @@ function checkPassword() {
 
 function checkEmail() {
     var emailToCheck = $("#Email").val();
-    var pattern = /^[a-zA-Z0-9+.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9]{2,63}$/i;
+    var pattern = /^[a-zA-Z0-9+.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9]{2,63}.*/i;
     if (pattern.test(emailToCheck)) {
         return true;
     }
